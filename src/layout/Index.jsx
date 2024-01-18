@@ -8,8 +8,11 @@ import Navbar from '../components/Navbar/Index'
   
   const Layout = () => {
   return (
-    <div>
-<Navbar/>
+    <>
+    <div className='h-14'>
+<Navbar />
+    </div>
+    <div className='container'>
 <BrowserRouter>
 <Routes>
 <Route  path='/' element={<Home/>} />
@@ -19,6 +22,7 @@ import Navbar from '../components/Navbar/Index'
 </Routes>
 </BrowserRouter>
 </div>
+    </>
 
   )
 }
