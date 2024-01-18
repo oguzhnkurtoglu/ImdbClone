@@ -12,7 +12,8 @@ export default {
       colors:{
         layoutBg:"rgb(0,0,0)",
         navbarBg:"#121212",
-        logoBg: "rgb(245, 197, 24)",
+        buttonHover:"	hsl(60, 89%, 7%)",
+        primary: "rgb(245, 197, 24)",
   
       },
     },

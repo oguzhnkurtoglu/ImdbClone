@@ -8,21 +8,21 @@ import Navbar from '../components/Navbar/Index'
   
   const Layout = () => {
   return (
-    <>
+<>
     <div className='h-14'>
-<Navbar />
+        <Navbar />
     </div>
     <div className='container'>
-<BrowserRouter>
-<Routes>
-<Route  path='/' element={<Home/>} />
-<Route  path='favorites' element={<Favorites/>} />
-<Route  path=':detail' element={<Detail/>} />
-<Route  path='*' element={<NotFound/>} />
-</Routes>
-</BrowserRouter>
-</div>
-    </>
+        <BrowserRouter>
+        <Routes>
+        <Route  path='/' element={<Home/>} />
+        <Route  path='favorites' element={<Favorites/>} />
+        <Route  path=':detail' element={<Detail/>} />
+        <Route  path='*' element={<NotFound/>} />
+        </Routes>
+        </BrowserRouter>
+      </div>
+</>
 
   )
 }
