@@ -14,7 +14,7 @@ const Navbar = () => {
     
     
       {/* MENU ICON */}
-      <div className=" box-border hover:bg-buttonHover p-1 flex items-center font-black space-x-2 cursor-pointer hover:">
+      <div className="  rounded-md hover:bg-buttonHover p-2 flex items-center font-black space-x-2 cursor-pointer hover:">
       <UnorderedListOutlined style={{ fontSize: '18px', color: '#fff', fontWeight:"bold" }} />
       <span className="text-white text-sm">Menu</span>
       </div>
@@ -26,7 +26,7 @@ const Navbar = () => {
       </div>
 
 
-      <div className="box-border text-white hover:bg-buttonHover w-32 h-8 font-black rounded-md justify-center flex items-center text-l"><CiBookmarkPlus/>WatchList</div>
+      <div className="box-border cursor-pointer text-white hover:bg-buttonHover w-32 h-8 font-black rounded-md justify-center flex items-center text-l"><CiBookmarkPlus/>WatchList</div>
 
     </div>
 </div>
