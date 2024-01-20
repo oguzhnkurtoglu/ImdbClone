@@ -1,12 +1,12 @@
 import Layout from "./layout/Index"
-import {ApiDataProvider} from "./context/Movies"
+import { InputData } from './context/InputData'
 
 const App = () => {
   return (
-    <div className="bg-layoutBg">
-      <ApiDataProvider>
+    <div className="bg-layoutBg h-full">
+      <InputData>
       <Layout/>
-      </ApiDataProvider>
+      </InputData>
     </div>
 
 )

@@ -4,7 +4,6 @@ import Favorites from "../pages/Favorites"
 import Detail from '../pages/Detail'
 import NotFound from '../pages/NotFound'
 import Navbar from '../components/Navbar/Index'
-
   
   const Layout = () => {
   return (

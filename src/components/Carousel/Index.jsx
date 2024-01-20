@@ -10,7 +10,7 @@ const contentStyle = {
 
 const Slider = () => {
   return (
-    <Carousel autoplay>
+    <Carousel autoplay >
     <div className='relative '>
       <h3 style={contentStyle}>1</h3>
       <div className=' absolute bottom-0 left-2 bg-white w-[100px] h-[200px]'>

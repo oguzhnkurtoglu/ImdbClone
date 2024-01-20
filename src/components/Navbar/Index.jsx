@@ -1,9 +1,14 @@
 import {UnorderedListOutlined} from "@ant-design/icons"
 import { Input } from "antd"
 import { CiBookmarkPlus } from "react-icons/ci";
+import { useContext, useState } from 'react';
+import {  InputDataContext } from '../../context/InputData';
 
 
 const Navbar = () => {
+  const { setInput } = useContext(InputDataContext);
+  const [tempInput, setTempInput ] = useState("");
+
   return (
     <div className="   bg-navbarBg ">
     <div className="h-[100%] mx-auto p-2 md:py-2 max-w-[1080px] space-x-4 flex justify-center items-center ">
@@ -21,8 +26,12 @@ const Navbar = () => {
       
       {/* INPUT FIELD */}
       <div className=" flex-1"> 
-
-      <Input placeholder="Search IMDb" className=" placeholder:text-black" />
+        <form onSubmit={(e)=>{e.preventDefault()
+        setInput(tempInput)
+        setTempInput("")
+        }}>
+      <Input placeholder="Search IMDb" className=" placeholder:text-black" value={tempInput} onChange={(e) => setTempInput(e.target.value)} />
+        </form>
       </div>
 
 
