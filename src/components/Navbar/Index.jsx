@@ -10,12 +10,16 @@ const Navbar = () => {
   const [tempInput, setTempInput ] = useState("");
 
   return (
-    <div className="   bg-navbarBg ">
-    <div className="h-[100%] mx-auto p-2 md:py-2 max-w-[1080px] space-x-4 flex justify-center items-center ">
+    <div className="container ">
+      <div>
+
+    <div className="h-[100%] p-2 md:py-2 w-full space-x-4 flex justify-center items-center ">
 
     
       {/* LOGO */}
-      <div className="box-border p-0 font-Roboto cursor-pointer bg-primary w-16 h-8 font-black rounded-md justify-center flex items-center text-xl">IMDb</div>
+
+        <div className="box-border p-0 font-Roboto cursor-pointer bg-primary w-16 h-8 font-black rounded-md justify-center flex items-center text-xl">IMDb</div>
+  
     
     
       {/* MENU ICON */}
@@ -29,7 +33,7 @@ const Navbar = () => {
         <form onSubmit={(e)=>{e.preventDefault()
         setInput(tempInput)
         setTempInput("")
-        }}>
+      }}>
       <Input placeholder="Search IMDb" className=" placeholder:text-black" value={tempInput} onChange={(e) => setTempInput(e.target.value)} />
         </form>
       </div>
@@ -38,6 +42,7 @@ const Navbar = () => {
       <div className="box-border cursor-pointer text-white hover:bg-buttonHover w-32 h-8 font-black rounded-md justify-center flex items-center text-l"><CiBookmarkPlus/>WatchList</div>
 
     </div>
+          </div>
 </div>
     
 
