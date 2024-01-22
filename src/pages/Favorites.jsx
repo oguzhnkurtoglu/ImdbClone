@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import MovieListItem from '../components/MovieListItem/Index';
 
 const Favorites = () => {
   const [responseData, setResponseData] = useState([]);
@@ -29,19 +30,17 @@ const Favorites = () => {
     };
 
     fetchWatchlistMovies();
-  }, []);
+  }, [])
 
   return (
-    <div>
-      {/* responseData içindeki film verilerini kullan */}
-      {responseData.map((movie) => (
-        <div className='text-white' key={movie.id}>
-          <p>{movie.title}</p>
-          {/* Diğer film bilgileri */}
-        </div>
-      ))}
+    <div className=' grid grid-cols-4 gap-4' >
+            <h2 className='text-2xl col-span-4 text-center text-primary font-extrabold'>Your Favorite List</h2>
+    {
+      responseData.map((item, index) => ( <MovieListItem key={index} item={item}/>))
+      
+    }
     </div>
-  );
-};
+  )
+}
 
 export default Favorites;

@@ -15,12 +15,12 @@ const Navbar = () => {
 
     <div className="h-[100%] p-2 md:py-2 w-full space-x-4 flex justify-center items-center ">
 
-    
-      {/* LOGO */}
 
-        <div className="box-border p-0 font-Roboto cursor-pointer bg-primary w-16 h-8 font-black rounded-md justify-center flex items-center text-xl">IMDb</div>
-  
-    
+      
+
+      {/* LOGO */}
+      {/* <Link to="/"> <div className="box-border p-0 font-Roboto cursor-pointer bg-primary w-16 h-8 font-black rounded-md justify-center flex items-center text-xl">IMDb</div></Link>  */}
+      <div className="box-border p-0 font-Roboto cursor-pointer bg-primary w-16 h-8 font-black rounded-md justify-center flex items-center text-xl">IMDb</div>
     
       {/* MENU ICON */}
       <div className="  rounded-md hover:bg-buttonHover p-2 flex items-center font-black space-x-2 cursor-pointer hover:">
@@ -38,8 +38,10 @@ const Navbar = () => {
         </form>
       </div>
 
+      <div className="box-border cursor-pointer text-white hover:bg-buttonHover w-32 h-8 font-black rounded-md justify-center flex items-center text-l">
+        <CiBookmarkPlus />WatchList
+      </div>
 
-      <div className="box-border cursor-pointer text-white hover:bg-buttonHover w-32 h-8 font-black rounded-md justify-center flex items-center text-l"><CiBookmarkPlus/>WatchList</div>
 
     </div>
           </div>

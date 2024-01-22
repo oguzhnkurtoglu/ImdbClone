@@ -13,7 +13,7 @@ const DetailContent = ({item}) => {
          genres.map((item,index) => (<span className="rounded-xl p-2 border" key={index}>{item.name}</span>)) :
          ( <p>Loading</p>) } */}
           </div>
-          <div className="flex justify-center items-center   ">{item.vote_average } <FaStar color="gold"/></div>
+          <div className="flex justify-center items-center   ">{Number(item.vote_average).toFixed(1)} <FaStar color="gold" /></div>
         </div>
 
     </div>

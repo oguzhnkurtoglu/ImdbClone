@@ -1,10 +1,12 @@
 import axios from "axios";
 import { CiBookmarkPlus } from "react-icons/ci";
 import { Link } from 'react-router-dom';
+import { FaStar } from "react-icons/fa";
+
 
 const MovieListItem = ({item}) => {
   const options = {
-    method: 'DELETE',
+    method: 'POST',
     url: 'https://api.themoviedb.org/3/account/20466368/watchlist',
     headers: {
       accept: 'application/json',
@@ -13,33 +15,38 @@ const MovieListItem = ({item}) => {
     },
     data: {"media_type":"movie", "media_id": item.id, "watchlist": "true"}};
   
- 
+    const addWatchList = () => {axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data)
+      })
+      .catch(function (error) {
+        console.error(error);
+      })
 
-
+    }
   return (
-    <div className="text-white bg-buttonHover rounded-sm leading-normal  mx-auto hover:bg-slate-400/40">
+    <div className={`text-white bg-buttonHover rounded-sm leading-normal mx-auto w-full h-full  ${item.poster_path === null ? 'hidden' : ''}`}>
       <div className="relative" >
-        <img className="w-full"
+              <img
+                className="w-full h-full object-cover hover:opacity-30 transition-opacity duration-300 ease-in-out"
                 src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
                 alt={item.title}
               />
-              <span className=" cursor-pointer">
-              <CiBookmarkPlus size={74} onClick={()=>{ axios
-    .request(options)
-    .then(function (response) {
-      console.log(response.data)
-    })
-    .catch(function (error) {
-      console.error(error);
-    })}} className="absolute top-[-5px] left-[-14px]" />
-    </span>
 
+ 
+              <div className=" cursor-pointer">
+              <CiBookmarkPlus size={74} onClick={()=>{ addWatchList}} className="absolute top-[-5px] left-[-14px]" />
+     </div>
       </div>
-      <p className=" whitespace-nowrap text-ellipsis overflow-hidden ">{item.title}</p>
-      <div>{item.vote_average}</div>
+      <div className="flex flex-col justify-center items-center">
+
+      <p className="max-w-[100%] overflow-hidden whitespace-nowrap overflow-ellipsis">{item.title}</p>
+      <div className="flex items-center justify-center">{Number(item.vote_average).toFixed(1)} <FaStar color="gold" /></div>
       <Link to={`/${item.id}`}>Detail Page</Link>
-    </div>
-  )
-}
+      </div>
+    </div>) }
+  
+
 
 export default MovieListItem
